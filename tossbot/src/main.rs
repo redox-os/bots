@@ -6,7 +6,7 @@ use std::io::Read;
 use std::sync::{Arc, Mutex};
 
 fn main() {
-    let rand = Arc::new(Mutex::new(fs::File::open("/dev/random").unwrap()));
+    let rand = Arc::new(Mutex::new(fs::File::open("/dev/urandom").unwrap()));
 
     Bot::new(env!("TOKEN"), move |_| {
         let mut outcome = [0];
