@@ -4,7 +4,7 @@ use mars::{Bot, Response};
 
 fn main() {
     Bot::new(env!("TOKEN"), move |req| {
-        let query = req.text.trim_left_matches("docbot:").trim_left_matches("docgen ").trim();
+        let query = req.text.trim_left_matches("docbot:").trim_left_matches("docbot ").trim();
 
         Response {
             username: Some("docbot"),
