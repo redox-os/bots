@@ -3,10 +3,10 @@ extern crate mars;
 use mars::{Bot, Response};
 use std::fs;
 use std::io::Read;
-use std::sync::{Arc, Mutex};
+use std::sync::Mutex;
 
 fn main() {
-    let rand = Arc::new(Mutex::new(fs::File::open("/dev/urandom").unwrap()));
+    let rand = Mutex::new(fs::File::open("/dev/urandom").unwrap());
 
     Bot::new(env!("TOKEN"), move |_| {
         let mut outcome = [0];
